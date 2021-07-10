@@ -9,5 +9,10 @@ class Hora extends Model
 {   protected $table = 'horas';
     use HasFactory;
     
-    
+    public function user(){
+        return $this->belongsTo('App\Models\User','idUsuario','id');
+    }
+    public function userm(){
+        return $this->belongsTo('App\Models\User','idMedico','id');
+    }
 }

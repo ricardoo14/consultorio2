@@ -19,7 +19,9 @@
                 <th scope="col"></th>
                 <th scope="col">Fecha de hora</th>
                 <th scope="col">Medico</th>
+                <th scope="col">Especialidad</th>
                 <th scope="col">Accion</th>
+                <th scope="col">Pago</th>
             </tr>
         </thead>
         <tbody>
@@ -27,9 +29,10 @@
                 <tr>
                     <th scope="row"></th>
                     <td>{{$h->hora}}</td>
-                    <td>{{$h->idMedico}}</td>
+                    <td>{{$h->userm->nombre}} {{$h->userm->apellido}}</td>
+                    <td>{{$h->userm->especialidad->nombre}}</td>
                     <td><a href="{{ route('horas.show', $h->id) }}"><button type="button" class="btn btn-secondary">Ver</button></a>
-                    <td><a href="{{ route('pago', $h->id) }}"><button type="button" class="btn btn-secondary">Pagar</button></a>
+                    <td><a href="{{ route('pagos.show', $h->id) }}"><button type="button" class="btn btn-success">Pagar</button></a>
                     </td>
                 </tr>
             @endforeach    

@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Hora;
+
 use Illuminate\Http\Request;
 
-class HoraController extends Controller
+class PacienteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class HoraController extends Controller
      */
     public function index()
     {
-        return view('horas.index',['hora'=>Hora::all()->where('idUsuario',auth()->id())]);
+        //
     }
 
     /**
@@ -23,7 +23,7 @@ class HoraController extends Controller
      */
     public function create()
     {
-        return view('horas.create');
+        //
     }
 
     /**
@@ -34,14 +34,7 @@ class HoraController extends Controller
      */
     public function store(Request $request)
     {
-        $hora = new Hora();
-        $hora->hora = request('hora');
-        $hora->fecha = request('fecha');
-        $hora->idUsuario =auth()->id();
-        $hora->idMedico = request('medico');
-        
-        $hora->save();
-        return redirect('horas')->with('info', 'hora registrada');
+        //
     }
 
     /**
@@ -51,8 +44,8 @@ class HoraController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {   
-        return view('horas.show',['hora'=>Hora::findOrFail($id)]);
+    {
+        //
     }
 
     /**
@@ -87,10 +80,5 @@ class HoraController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function pago($id)
-    {
-        
     }
 }

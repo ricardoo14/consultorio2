@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
             $table->foreignId('idEspecialidad')->nullable()->constrained('especialidades');
+            $table->foreignId('idPrevision')->nullable()->constrained('previsiones');
         });
     }
 

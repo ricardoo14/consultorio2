@@ -25,14 +25,19 @@
 
 
                 <div class="row">
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-4">
                         <label for="disabledTextInput" class="form-label">Rut</label>
                         <input type="text" id="disabledTextInput" value="{{ $use->rut }}" class="form-control"
                             placeholder="Disabled input">
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-4">
                         <label for="disabledTextInput" class="form-label">Email</label>
                         <input type="text" id="disabledTextInput" value="{{ $use->email }}" class="form-control"
+                            placeholder="Disabled input">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="disabledTextInput" class="form-label">Prevision</label>
+                        <input type="text" id="disabledTextInput" value="{{ $use->prevision->nombre }}" class="form-control"
                             placeholder="Disabled input">
                     </div>
                 </div>

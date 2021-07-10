@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Prevision;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -55,6 +56,7 @@ class RegisterController extends Controller
             'rut' => ['required', 'string', 'max:10','cl_rut'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'idPrevision' => ['required'],
         ]);
     }
 
@@ -72,8 +74,14 @@ class RegisterController extends Controller
             'rut' => $data['rut'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'idPrevision' => $data['idPrevision'],
         ]);
         $user->assignRole('Paciente');
         return $user;
     }
+    public function showRegistrationForm()
+{
+    $prevision = Prevision::all();
+    return view("auth.register", compact("prevision"));
+}
 }

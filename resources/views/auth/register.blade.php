@@ -85,6 +85,17 @@
                 </div>
             </div>
 
+            <div class="row">
+                <div class="form-group col-md-6">
+                     <select name="idPrevision" class="form-control" >
+                     <option value="selected disabled">Elige una prevision de fonasa</option>
+                     @foreach($prevision as $p)
+                     <option value="{{$p->id}}">{{$p->nombre}}</option>
+                     @endforeach
+                     </select>
+                 </div>
+            </div>
+
             <div class="form-group row mb-0">
                 <div class="col-md-6 offset-md-5">
                     <button type="submit" class="btn btn-primary">

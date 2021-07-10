@@ -76,7 +76,7 @@
                     @else
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }}
+                                {{ Auth::user()->nombre }}
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -104,18 +104,6 @@
     <div class="container pt-4">
         <!-- Section: Social media -->
         <section class="mb-4">
-          
-
-            <!-- Twitter -->
-            <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
-                data-mdb-ripple-color="dark"><i class="fab fa-twitter"></i></a>
-
-
-
-            <!-- Instagram -->
-            <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
-                data-mdb-ripple-color="dark"><i class="fab fa-instagram"></i></a>
-
             
             <!-- Phone -->
             <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"

@@ -1,13 +1,37 @@
 @extends('layouts.plantilla')
 @section('content')
 <div class="container">
-<form action="" method="POST" enctype="multipart/form-data">
+<form action="/pagos" method="POST" enctype="multipart/form-data">
     @csrf
 
-    <div class="row">
+<div class="row">
+    <table class="table table-warning">
+        <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Monto bruto</th>
+                <th scope="col">Descuento prevision</th>
+                <th scope="col">Monto final</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <th scope="row"></th>
+                    <td>${{$hora->userm->especialidad->valor}}</td>
+                    <td>{{$hora->user->prevision->descuento}}%</td>
+                    <td>{{$total=(($bruto=$hora->userm->especialidad->valor)-($descuento= ($bruto/100)*($hora->user->prevision->descuento)))}}</td>
+                    <td></td>
+                </tr>  
+        </tbody>
+    </table>   
+</div>
+
+<div class="d-none">
     <div class="form-group col-md-6">
-        <label>Monto</label>
-        <input type="text" name="asunto" class="form-control" value="$35000">
+        <input type="text" name="valor" class="form-control" value="{{$total}}">
+    </div>
+    <div class="form-group col-md-6">
+        <input type="text" name="idHora" class="form-control" value="{{$hora->id}}">
     </div>
 </div>
 

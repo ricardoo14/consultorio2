@@ -4,9 +4,19 @@
 
         <div class="row">
             <div class="form-group col-md-6">
-                <label>Hora</label>
-                <input type="datetime-local" name="hora" class="form-control" placeholder="Hora">
+                <label>Fecha</label>
+                <input type="date" name="fecha" class="form-control" placeholder="Hora">
             </div>
+        </div>
+        <div class="row">
+            <select class="form-select" aria-label="Seleccione hora" name="hora">
+                <option selected>Hora</option>
+                <option value="8">08:00</option>
+                <option value="10">10:00</option>
+                <option value="12">12:00</option>
+                <option value="14">14:00</option>
+                <option value="16">16:00</option>
+              </select>
         </div>
 
         <select class="form-group col-md-6" name="especialidad" wire:change='listarMedicos($event.target.value)'>

@@ -4,6 +4,7 @@ use App\Http\Controllers\AyudaController;
 use App\Http\Controllers\EmpleadoController;
 use App\Http\Controllers\HoraController;
 use App\Http\Controllers\MedicoController;
+use App\Http\Controllers\PagoController;
 use App\Http\Controllers\PerfilController;
 use App\Http\Controllers\RespuestaController;
 use Illuminate\Support\Facades\Route;
@@ -33,3 +34,5 @@ Route::resource('/ayudas',AyudaController::class)->middleware('auth');
 Route::resource('/gestionmedicos',MedicoController::class)->middleware('auth');
 Route::resource('/respuestas',RespuestaController::class)->middleware('auth');
 Route::resource('/gestionempleados',EmpleadoController::class)->middleware('auth');
+Route::resource('/pagos',PagoController::class);
+

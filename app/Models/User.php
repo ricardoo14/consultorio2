@@ -25,6 +25,7 @@ class User extends Authenticatable
         'rut',
         'email',
         'password',
+        'idPrevision',
     ];
 
     /**
@@ -47,6 +48,12 @@ class User extends Authenticatable
     ];
     public function especialidad(){
         return $this->belongsTo('App\Models\Especialidad','idEspecialidad','id');
+    }
+    public function horas(){
+        return $this->hasMany('App\Models\Hora');
+    }
+    public function prevision(){
+        return $this->belongsTo('App\Models\Prevision','idPrevision','id');
     }
    
 }
