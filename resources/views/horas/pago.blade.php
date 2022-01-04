@@ -20,7 +20,7 @@
                     <td>${{$hora->userm->especialidad->valor}}</td>
                     <td>{{$hora->user->prevision->descuento}}%</td>
                     <td>{{$total=(($bruto=$hora->userm->especialidad->valor)-($descuento= ($bruto/100)*($hora->user->prevision->descuento)))}}</td>
-                    <td></td>
+                    
                 </tr>  
         </tbody>
     </table>   

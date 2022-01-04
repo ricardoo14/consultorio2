@@ -51,7 +51,7 @@ class AyudaController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('ayudas.show',['ayuda'=>Ayuda::findOrFail($id)]);
     }
 
     /**

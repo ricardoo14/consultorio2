@@ -22,6 +22,8 @@ class User extends Authenticatable
     protected $fillable = [
         'nombre',
         'apellido',
+        'telefono',
+        'direccion',
         'rut',
         'email',
         'password',
@@ -54,6 +56,9 @@ class User extends Authenticatable
     }
     public function prevision(){
         return $this->belongsTo('App\Models\Prevision','idPrevision','id');
+    }
+    public function ayudas(){
+        return $this->hasMany('App\Models\Ayuda');
     }
    
 }

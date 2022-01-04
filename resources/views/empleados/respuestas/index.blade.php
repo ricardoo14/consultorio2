@@ -29,7 +29,7 @@
                 <tr>
                     <th scope="row"></th>
                     <td>{{$p->created_at}}</td>
-                    <td>{{$p->idPaciente}}</td>
+                    <td>{{$p->user->nombre}} {{$p->user->apellido}}</td>
                     <td>{{$p->asunto}}</td>
                     <td>{{$p->mensaje}}</td>
                     <td>

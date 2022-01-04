@@ -19,8 +19,8 @@
                 <th scope="col"></th>
                 <th scope="col">Fecha de ayuda</th>
                 <th scope="col">Asunto</th>
-                <th scope="col">Mensaje</th>
                 <th scope="col">Respuesta</th>
+                <th scope="col">Acccion</th>
             </tr>
         </thead>
         <tbody>
@@ -29,9 +29,9 @@
                     <th scope="row"></th>
                     <td>{{$a->created_at}}</td>
                     <td>{{$a->asunto}}</td>
-                    <td>{{$a->mensaje}}</td>
                     <td>{{$a->respuesta}}</td>
-                    <td></td>
+                    <td><a href="{{ route('ayudas.show', $a->id) }}"><button type="button" class="btn btn-secondary">Ver</button></a>
+                    </td>
                 </tr>
             @endforeach    
         </tbody>

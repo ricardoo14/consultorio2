@@ -4,6 +4,7 @@ use App\Http\Controllers\AyudaController;
 use App\Http\Controllers\EmpleadoController;
 use App\Http\Controllers\HoraController;
 use App\Http\Controllers\MedicoController;
+use App\Http\Controllers\MedicoHoraController;
 use App\Http\Controllers\PagoController;
 use App\Http\Controllers\PerfilController;
 use App\Http\Controllers\RespuestaController;
@@ -29,10 +30,12 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/horas/pagos/{id}',[HoraController::class,'pago'])->name('pago');
 Route::resource('/horas',HoraController::class)->middleware('auth');
-Route::get('/perfil',[PerfilController::class,'index'])->middleware('auth');
+/* Route::get('/perfil',[PerfilController::class,'index'])->middleware('auth'); */
+Route::resource('/perfil',PerfilController::class);
 Route::resource('/ayudas',AyudaController::class)->middleware('auth');
 Route::resource('/gestionmedicos',MedicoController::class)->middleware('auth');
 Route::resource('/respuestas',RespuestaController::class)->middleware('auth');
 Route::resource('/gestionempleados',EmpleadoController::class)->middleware('auth');
-Route::resource('/pagos',PagoController::class);
+Route::resource('/pagos',PagoController::class)->middleware('auth');
+Route::resource('/horasm',MedicoHoraController::class);
 

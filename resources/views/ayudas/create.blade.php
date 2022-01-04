@@ -23,13 +23,14 @@
             @csrf
 
             <div class="row">
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-5">
                 <label>Asunto</label>
                 <input type="text" name="asunto" class="form-control" placeholder="Asunto">
             </div>
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-7">
                 <label>Mensaje</label>
-                <input type="text" name="mensaje" class="form-control" placeholder="Mensaje">
+                {{-- <input type="text" name="mensaje" class="form-control" placeholder="Mensaje"> --}}
+                <textarea name="mensaje" rows="4"class ="form-control"placeholder="Ingresa tu mensaje!"></textarea>
             </div>
         </div>
 

@@ -19,6 +19,7 @@ class CreateHorasTable extends Migration
             $table->string('hora');
             $table->foreignId('idUsuario')->constrained('users')->onDelete('cascade');
             $table->foreignId('idMedico')->nullable()->constrained('users')->onDelete('cascade');
+            $table->foreignId('idEstadoHora')->nullable()->constrained('estados_hora');
             $table->timestamps();
         });
     }

@@ -39,9 +39,22 @@ class HoraController extends Controller
         $hora->fecha = request('fecha');
         $hora->idUsuario =auth()->id();
         $hora->idMedico = request('medico');
+        $hora->idEstadoHora = 1;
+
+        $v1 = Hora::all()->where('fecha', request('fecha'))->where('hora',request('hora'))->pluck('hora')->first();
+       
+            if($v1 == request('hora')){
+                return redirect('horas')->with('infa','No se pudo registrar hora');
+            }
+            else{
+                $hora->save();
+                return redirect('horas')->with('info','hora registrada');
+                }
         
-        $hora->save();
-        return redirect('horas')->with('info', 'hora registrada');
+
+        
+        /* $hora->save();
+        return redirect('horas')->with('info', 'hora registrada'); */
     }
 
     /**

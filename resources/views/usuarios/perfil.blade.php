@@ -23,6 +23,18 @@
                     </div>
                 </div>
 
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="disabledTextInput" class="form-label">Telefono</label>
+                        <input type="text" id="disabledTextInput" value="{{ $use->telefono }}" class="form-control"
+                            placeholder="Disabled input">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="disabledTextInput" class="form-label">Direccion</label>
+                        <input type="text" id="disabledTextInput" value="{{ $use->direccion }}" class="form-control"
+                            placeholder="Disabled input">
+                    </div>
+                </div>
 
                 <div class="row">
                     <div class="form-group col-md-4">
@@ -43,12 +55,12 @@
                 </div>
 
             </fieldset>
-            {{-- <div class="row">
+            <div class="row">
                 <div class="col-md-12">
                     <a href="{{ route('perfil.edit', $use->id) }}"><button type="button"
                             class="btn btn-warning">Editar</button></a>
                 </div>
-            </div> --}}
+            </div>
         </form>
     </div>
 @endsection

@@ -9,7 +9,7 @@
             </div>
         </div>
         <div class="row">
-            <select class="form-select" aria-label="Seleccione hora" name="hora">
+            <select class="form-group col-md-6" aria-label="Seleccione hora" name="hora">
                 <option selected>Hora</option>
                 <option value="8">08:00</option>
                 <option value="10">10:00</option>
@@ -37,7 +37,7 @@
 
         <div class="row">
             <div class="form-group col-md-6">
-                <button type="submit" class="btn btn-primary">Enviar Solicitud</button>
+                <button type="submit" class="btn btn-primary">Registrar hora</button>
                 <button type="reset" class="btn btn-danger">Cancelar</button>
             </div>
         </div>

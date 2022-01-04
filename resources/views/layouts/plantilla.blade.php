@@ -33,24 +33,23 @@
                           <a class="dropdown-item" href="{{url('/ayudas')}}">Solicitar ayuda</a>
                         </div>
                       </li>
-
+                      {{-- @can('Medico') --}}
                       <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           Medico
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item" href="{{url('/perfil')}}">Perfil</a>
-                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="{{url('/horasm')}}">Horas medico</a>
                         </div>
                       </li>
-
+                      {{-- @endcan --}}
                       <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           Empleado
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item" href="{{url('/perfil')}}">Perfil</a>
-                          <div class="dropdown-divider"></div>
+                          {{-- <a class="dropdown-item" href="{{url('/perfil')}}">Perfil</a>
+                          <div class="dropdown-divider"></div> --}}
                           <a class="dropdown-item" href="{{url('/gestionmedicos')}}">Gestion medicos</a>
                           <a class="dropdown-item" href="{{url('/gestionempleados')}}">Gestion empleados</a>
                           <div class="dropdown-divider"></div>

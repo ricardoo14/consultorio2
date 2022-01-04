@@ -2,21 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Hora;
 use Illuminate\Http\Request;
-use App\Models\Especialidad;
-use App\Models\User;
 
-class MedicoController extends Controller
+class MedicoHoraController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(){
-        $especialidad =Especialidad::all();
-        $medicos = User::all()->whereNotNull('idEspecialidad'); 
-        return view('administradores.medico.index',['medi'=>$medicos]);
+    public function index()
+    {
+        return view('medico.index',['hora'=>Hora::all()->where('idMedico',auth()->id())]);
     }
 
     /**
@@ -26,8 +24,7 @@ class MedicoController extends Controller
      */
     public function create()
     {
-        $especialidad = Especialidad::all();
-        return view('administradores.medico.create',['espe'=>$especialidad]);
+        //
     }
 
     /**
@@ -38,16 +35,7 @@ class MedicoController extends Controller
      */
     public function store(Request $request)
     {
-        $medico = new User();
-        $medico->nombre = request('nombre');
-        $medico->apellido = request('apellido');
-        $medico->rut = request('rut');
-        $medico->email = request('email');
-        $medico->password = bcrypt(request('password'));
-        $medico->idEspecialidad = request('idEspecialidad');
-        $medico->assignRole('Medico');
-        $medico->save();
-        return redirect('/gestionmedicos')->with('info','Medico registrado');
+        //
     }
 
     /**
@@ -58,7 +46,7 @@ class MedicoController extends Controller
      */
     public function show($id)
     {
-        
+        //
     }
 
     /**
@@ -92,8 +80,6 @@ class MedicoController extends Controller
      */
     public function destroy($id)
     {
-        $medicos = User::findOrFail($id);
-        $medicos->delete();
-        return redirect('/gestionmedicos');
+        //
     }
 }

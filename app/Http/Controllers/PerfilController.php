@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 class PerfilController extends Controller
@@ -57,7 +58,8 @@ class PerfilController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = Auth::user();
+        return view('usuarios.perfil-editar',['id'=>Auth::user()->$id],['use'=>$user]);
     }
 
     /**
@@ -69,7 +71,14 @@ class PerfilController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::find($id);
+        $user->nombre = $request->get('nombre');
+        $user->apellido = $request->get('apellido');
+        $user->telefono = $request->get('telefono');
+        $user->direccion = $request->get('direccion');
+        $user->update();
+        return redirect('/perfil');
+        
     }
 
     /**

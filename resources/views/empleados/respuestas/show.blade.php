@@ -8,7 +8,7 @@
 </div>
 <div class="container">
     
-<p class="lead">Fecha de hora:{{-- {{$hora->hora}} --}}</p>
+<p class="lead">Fecha de pregunta: {{$p->created_at}}</p>
 
 <form action="{{route('respuestas.update',$p->id)}}" method="POST" enctype="multipart/form-data">
     @method('PATCH')
@@ -21,13 +21,14 @@
         </div>
         <div class="form-group col-md-6">
             <label>Mensaje</label>
-            <input type="text" name="mensaje" value="{{$p->mensaje}}" class="form-control" readonly>
+            <textarea name="mensaje" rows="4"class ="form-control"placeholder="Ingresa tu mensaje!" readonly>{{$p->mensaje}}</textarea>
+            {{-- <input type="text" name="mensaje" value="{{$p->mensaje}}" class="form-control" readonly> --}}
         </div>
     </div>
     <div class="row">
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-12">
             <label>Respuesta</label>
-            <input type="text" name="respuesta" class="form-control">
+            <textarea name="respuesta" rows="4"class ="form-control"placeholder="Ingresa tu respuesta!"></textarea>
         </div>
     </div>
     

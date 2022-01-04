@@ -45,6 +45,29 @@
 
             <div class="row">
                 <div class="form-group col-md-6">
+                    <input id="telefono" placeholder="telefono" type="text"
+                        class="form-control @error('telefono') is-invalid @enderror" name="telefono"
+                        value="{{ old('telefono') }}" required autocomplete="telefono" autofocus>
+                    @error('telefono')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+                <div class="form-group col-md-6">
+                    <input id="direccion" placeholder="direccion" type="text"
+                        class="form-control @error('direccion') is-invalid @enderror" name="direccion"
+                        value="{{ old('direccion') }}" required autocomplete="direccion" autofocus>
+                    @error('direccion')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-md-6">
                     <input id="rut" placeholder="rut" type="text"
                         class="form-control @error('rut') is-invalid @enderror" name="rut" value="{{ old('rut') }}"
                         required autocomplete="rut" autofocus>

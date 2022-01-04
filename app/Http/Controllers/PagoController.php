@@ -40,7 +40,13 @@ class PagoController extends Controller
         $pago->valor = request('valor');
         $pago->idHora = request('idHora');
         $pago->save();
-        return redirect('horas')->with('info','Hora ingresada');
+
+        $hora = Hora::findOrFail(request('idHora'));
+        $hora->idEstadoHora = 2;
+        $hora->update();
+        return redirect('horas')->with('info','Hora pagada');
+
+
     }
 
     /**
